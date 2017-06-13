@@ -1,18 +1,20 @@
 # helmholtz_scattering problem
 We consider both sound-soft and sound-hard diffraction problems by a radius one sphere.
-We solve those problems using bempp.
+We solve those problems using Bempp.
 We compute the coefficients of the spherical harmonic functions.
-We compare the error of the Cauchy Data.
+We compare the numerical error of the Cauchy data.
 Also, we validate the calculus of the integral operators in "validation_integral_operators.py"
 
 # Notes:
-Tested with bempp 3.0.3.
+Tested with Bempp 3.0.3.
 To get the directory do: 
 
 `git clone https://github.com/pescap/helmholtz_scattering.git`
 
 Sound-soft problem tested with a number of precision and frequencies.
-Work in progress for Sound-hard problem.
+
+Work in progress for Sound-hard problem. (not stable)
+
 Calculus of volumic exact solutions not done yet.
 
 # References:
