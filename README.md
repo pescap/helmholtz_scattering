@@ -9,7 +9,7 @@ Also, we validate the calculus of the integral operators in "validation_integral
 Tested with bempp 3.0.3.
 To get the directory do: 
 
-'''git clone https://github.com/pescap/helmholtz_scattering.git'''
+`git clone https://github.com/pescap/helmholtz_scattering.git`
 
 Sound-soft problem tested with a number of precision and frequencies.
 Work in progress for Sound-hard problem.
