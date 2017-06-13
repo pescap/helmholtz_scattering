@@ -5,7 +5,7 @@ We compute the coefficients of the spherical harmonic functions.
 We compare the error of the Cauchy Data.
 Also, we validate the calculus of the integral operators in "validation_integral_operators.py"
 
-#Notes:
+# Notes:
 Tested with bempp 3.0.3.
 To get the directory do: 
 
