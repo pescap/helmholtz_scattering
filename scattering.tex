@@ -1,0 +1,149 @@
+\documentclass[1pt]{article}
+\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{amsmath,amsthm}
+\usepackage{caption}% http://ctan.org/pkg/caption
+\usepackage{color}
+\usepackage{hyperref,}
+\usepackage{cleveref}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\newcommand{\bea}{\begin{align}}
+\newcommand{\eea}{\end{align}}
+
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IN}{\mathbb{N}}
+
+
+\newcommand{\eps}{\varepsilon}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bx}{{\bf x}}
+\newcommand{\bX}{{\bf X}}
+\newcommand{\bp}{{\bf p}}
+\newcommand{\by}{{\bf y}}
+\newcommand{\bA}{{\bf A}}
+\newcommand{\bC}{{\bf C}}
+\newcommand{\bI}{{\bf I}}
+\newcommand{\bR}{{\bf R}}
+\newcommand{\bP}{{\bf P}}
+\newcommand{\bZ}{{\bf Z}}
+\newcommand{\bT}{{\bf T}}
+
+\newcommand{\tbA}{\tilde{\bA}}
+\newcommand{\ba}{{\bf a}}
+\newcommand{\bb}{{\bf b}}
+\newcommand{\bn}{{\bf n}}
+\newcommand{\bB}{{\bf B}}
+\newcommand{\bY}{{\bf Y}}
+\newcommand{\bz}{{\bf z}}
+\newcommand{\bv}{{\bf v}}
+\newcommand{\bw}{{\bf w}}
+\newcommand{\bV}{{\bf V}}
+\newcommand{\bDT}{{\bf DT}}
+\newcommand{\bDV}{{\bf DV}}
+\newcommand{\bzp}{{\bf z'}}
+\newcommand{\bl}{{\pmb \lambda}}
+\newcommand{\bmu}{\bm \mu} 
+\newcommand{\bdelta}{\mathbf{\delta}}
+
+
+\newcommand{\mA}{\mathcal{A}}
+\newcommand{\mD}{\mathcal{D}}
+\newcommand{\mH}{\mathcal{H}}
+\newcommand{\mK}{\mathcal{K}}
+\newcommand{\mI}{\nobreak\hspace{.16667em plus .08333em}\mathcal{I}}
+\newcommand{\mM}{\mathcal{M}}
+\newcommand{\mO}{\mathcal{O}}
+\newcommand{\mP}{\mathcal{P}}
+\newcommand{\mS}{\mathcal{S}}
+\newcommand{\mT}{\mathcal{T}}
+\newcommand{\mV}{\mathcal{V}}
+\newcommand{\mW}{\mathcal{W}}
+
+\newcommand{\U}{{\text{U}}}
+\newcommand{\V}{{\text{V}}}
+
+
+% Others
+\newcommand{\cj}{\textcolor{blue}}
+\newcommand{\pe}{\textcolor{magenta}}
+\newcommand{\todo}{\textcolor{red}}
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\sh}{\operatorname{sh}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\interior}{\operatorname{int}}
+
+\newtheorem{proposition}{Proposition}
+
+\title{Boundary Reduction of Helmholtz Scattering Problem for exterior domains}
+\author{Paul Escapil-Inchausp\'e}
+%\date{}                                           % Activate to display a given date or no date
+
+
+\begin{document}
+\maketitle
+
+Let $D$ be an open Lipschitz bounded domain, $D^c:=\IR^d\backslash \overline{D}$ and $\Gamma:=\partial D$, $d=2,3$ with exterior normal field $\bn$ pointing by convention toward the exterior domain. We use the superscript $i=1$ (resp.~$i=2$) when referring to $D^c$ (resp.~$D$). For a given scalar field $\U$, we introduce the Dirichlet (resp. Neumann) traces on $\Gamma$ as:
+\be
+\gamma_0 \U^i:= \U|_\Gamma \text{ and } \gamma_1 \U:= \langle \bn, \nabla \U|_\Gamma  \rangle.
+\ee
+For a given $\kappa$, we define the Helmholtz equation operator $L_\kappa:\U \mapsto \Delta \U + \kappa^2 \U$. For an index $\beta \in \{0,1\}$ us consider the following exterior boundary value problems {\bf (EP$_\beta$)}, which consist in finding the scattered field induced in response to a given incident field:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\subsubsection*{Exterior Problems}
+\label{subsubs:EP_0}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+Given $\kappa>0$ and $\U^{inc} \in H_{\text{loc}}^1(D^c)$ with $L_\kappa \U^{inc}=0$ in $D^c$, find $\U:=(\U^{scat}+\U^{inc}) \in H_{\text{loc}}^1(D^c)$ such that
+\be
+\left\{
+\label{eq:EP_0}
+\begin{array}{ll}
+\Delta\U+\kappa^2\U  = 0&\text{ in } D^c,\\
+\noalign{\vspace{3pt}}
+  \gamma_{\beta} \U = 0&\text{ on } \Gamma,\\
+  \noalign{\vspace{6pt}}
+   \Big|\frac{\partial}{\partial r} \U^{scat}-i\kappa \U^{scat}\Big| = o(r^{\frac{1-d}{2}}) &\text{ for } r \to \infty.
+\end{array}
+\right.
+\ee
+Let us introduce the boundary integral operators $\mV_\kappa,\mK_\kappa$,$\mW_\kappa$,$\mK_\kappa',\mI$ defined on $\Gamma$.
+Then, we have the following propositions:
+\begin{proposition}
+The \emph{sound-soft} problem ${\bf (EP_0)}$ is equivalent to each of the following BIE given on $\Gamma$:
+\be
+\left\{
+\label{eq:B_EP_0}
+\begin{array}{ll}
+\mathcal{V}_\kappa \gamma_1 \U &= \gamma_0 \U^{inc}\text{ and }\\
+\mathcal{V}_\kappa \gamma_1 \U &= -(\mathcal{K}_\kappa-\frac{1}{2}\mI) \gamma_0 \U^{inc}.
+\end{array}
+\right.
+\ee
+\end{proposition}
+
+\begin{proposition}
+The \emph{sound-hard} problem ${\bf (EP_1)}$ is equivalent to each of the following BIE given on $\Gamma$:
+\be
+\left\{
+\label{eq:B_EP_0}
+\begin{array}{ll}
+\mathcal{W}_\kappa \gamma_0 \U &= \gamma_1 \U^{inc}\text{ and }\\
+\mathcal{W}_\kappa \gamma_0 \U &= (\mK'_\kappa+\frac{1}{2}\mI) \gamma_1 \U^{inc}.
+\end{array}
+\right.
+\ee
+\end{proposition}
+
+\end{document}  
