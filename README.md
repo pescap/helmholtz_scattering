@@ -13,7 +13,9 @@ To get the directory do:
 
 Sound-soft problem tested with a number of precision and frequencies.
 
-Work in progress for Sound-hard problem. (not stable)
+Work in progress for Sound-hard problem. (not stable).
+
+A little documentation available in "scattering.tex" (or "scattering.pdf").
 
 Calculus of volumic exact solutions not done yet.
 
