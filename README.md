@@ -11,9 +11,9 @@ To get the directory do:
 
 `git clone https://github.com/pescap/helmholtz_scattering.git`
 
-Sound-soft problem tested with a number of precision and frequencies.
+Sound-soft problem tested with a number of precisions and frequencies.
 
-Work in progress for Sound-hard problem. (not stable).
+Work in progress for sound-hard problem. (not stable).
 
 A little documentation available in "scattering.tex" (or "scattering.pdf").
 
