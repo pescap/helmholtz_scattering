@@ -34,7 +34,7 @@ def combined_data(x, n, domain_index, result):
 
 
 grid = bem.shapes.sphere(h=h)
-space = bem.function_space(grid, "P", 1) # Can be applied to any function space
+space = bem.function_space(grid, "P", 2) # Can be applied to any function space
 
 # Assembly of operators
 
@@ -70,12 +70,12 @@ neumann_coeff_U_combined, info = scipy.sparse.linalg.gmres(lhs_combined, rhs_com
 neumann_U = bem.GridFunction(space, coefficients=neumann_coeff_U)
 neumann_U_combined = bem.GridFunction(space, coefficients=neumann_coeff_U_combined)
 
-#neumann_U.plot()
+neumann_U.plot()
 #neumann_U_combined.plot()
 
 sol = Helmholtz_Exact_Solution(kappa)
 
-neumann_U_exact_fun = sol.uBoundaryNeumannTrace
+neumann_U_exact_fun = sol.uExactNeumannTrace
 neumann_U_exact = bem.GridFunction(space, fun=sol.uExactBoundaryNeumannTrace)
 
 #neumann_U_exact.plot()
